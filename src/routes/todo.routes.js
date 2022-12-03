@@ -3,7 +3,7 @@ const ctr = require('../controller/todo.controller')
 const { validationMiddleware } = require("./middleware")
 const {create}  = require("./validations/todos")
 
-// router.get("/" , ctr.getRecords)
+router.get("/" , ctr.getRecords)
 
 router.post("/" ,validationMiddleware(create), ctr.createRecord)
 

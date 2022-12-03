@@ -4,14 +4,14 @@ const responseMessage = require("../common/response-message");
 const srv= require('../service').todoService
 
 class TodoController {
-    // async getRecords(req,res,next){
-    //     try {
-    //         const result=  await srv.findWithPagination()
-    //         return ApiResponse(res,true,ResponseMessages.RECORD_FETCH_SUCCESS,result)   
-    //     } catch (error) {
-    //             next(error)
-    //     }
-    // }
+    async getRecords(req,res,next){
+        try {
+            const result=  await srv.findWithPagination()
+            return ApiResponse(res,true,ResponseMessages.RECORD_FETCH_SUCCESS,result)   
+        } catch (error) {
+                next(error)
+        }
+    }
     async createRecord(req,res,next){
         try {
             const params = req.body
